@@ -106,18 +106,6 @@ public class Piglet extends Creature {
     }
 
     @Override
-    public String toString() {
-        return "Piglet{" +
-                "scareIndex=" + scareIndex +
-                ", speed=" + speed +
-                ", StepsCount=" + StepsCount +
-                ", health=" + health +
-                ", ScareCount=" + ScareCount +
-                ", viewPiglet=" + viewPiglet +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -134,5 +122,17 @@ public class Piglet extends Creature {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), scareIndex, speed, StepsCount, health, ScareCount, viewPiglet);
+    }
+
+    @Override
+    public String toString() {
+        return "Piglet{" +
+                "scareIndex=" + scareIndex +
+                ", speed=" + speed +
+                ", StepsCount=" + StepsCount +
+                ", health=" + health +
+                ", ScareCount=" + ScareCount +
+                ", viewPiglet=" + viewPiglet +
+                '}';
     }
 }

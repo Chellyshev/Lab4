@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class VinniePooh extends Creature {
 
     private double scareIndex = 1;
@@ -151,8 +153,43 @@ public class VinniePooh extends Creature {
 
         }
 
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        VinniePooh that = (VinniePooh) o;
+        return Double.compare(that.scareIndex, scareIndex) == 0 &&
+                Double.compare(that.speed, speed) == 0 &&
+                StepsCount == that.StepsCount &&
+                StepsToRun == that.StepsToRun &&
+                Double.compare(that.health, health) == 0 &&
+                ScareCount == that.ScareCount &&
+                Double.compare(that.viewPooh, viewPooh) == 0 &&
+                Objects.equals(PoohSpeech, that.PoohSpeech) &&
+                Objects.equals(licknose, that.licknose);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), scareIndex, PoohSpeech, speed, StepsCount, StepsToRun, health, ScareCount, viewPooh, licknose);
+    }
+
+    @Override
+    public String toString() {
+        return "VinniePooh{" +
+                "scareIndex=" + scareIndex +
+                ", PoohSpeech='" + PoohSpeech + '\'' +
+                ", speed=" + speed +
+                ", StepsCount=" + StepsCount +
+                ", StepsToRun=" + StepsToRun +
+                ", health=" + health +
+                ", ScareCount=" + ScareCount +
+                ", viewPooh=" + viewPooh +
+                ", licknose=" + licknose +
+                '}';
+    }
+}
 
 
 
